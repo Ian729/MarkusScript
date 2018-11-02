@@ -7,5 +7,5 @@ The goal is to automate markus lookup
 3. input username and password
 
 ## Next step
-1. Add check points(compare online score with local version, if different, send a text message to user's phone)
+~~1. Add check points(compare online score with local version, if different, send a text message to user's phone)~~
 2. Add automation(cron or other automation tool)
