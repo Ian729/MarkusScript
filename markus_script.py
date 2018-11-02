@@ -2,10 +2,15 @@ import requests
 import bs4, csv
 import os
 import filecmp
+import smtplib
 
 # new Session()
 s = requests.Session()
-# constants
+# the mailbox to send the mail
+smtpObj = smtplib.SMTP("smtp.mailbox.com",587)
+smtpObj.starttls()
+smtpObj.login('yourqqaccount@mailbox.com', 'mailboxpassword')
+# constants CHANGE IT NOW
 subject1 = "csc411-2018-09"
 subject2 = "csc418-2018-09"
 subject3 = "csc458-2018-09"
@@ -46,10 +51,13 @@ for subject in [subject1, subject2, subject3]:
 	f.close()
 	if file_exist:
 		if filecmp.cmp(subject+".csv", subject+"2.csv"):
+			print("they are the same!")
 			#no update recently
 			os.remove(subject+"2.csv")
 		else:
+			print("they are NOT the same!")
 			#replace the original file
 			os.rename(subject+"2.csv",subject+".csv")
-			# and send message
+			# and send message, you can customize
+			smtpObj.sendmail("sendmailaccount@qq.com", "receive_mailbox_account@mailbox.com","Subject: Your Markus result is updated.Please check it soon!")
 			
