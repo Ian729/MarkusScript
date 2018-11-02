@@ -15,5 +15,5 @@ Done~~1. Add check points(compare online score with local version, if different,
 Done~~2. Add automation(cron or other automation tool)~~  
 
 ## Some thoughts:  
-I think the best way to automate this script is rent a server and have a cron task to automate it.  
+I think the best way to automate this script is to rent a server and have a cron task to automate it.  
 To learn more about cron, `man cron`
