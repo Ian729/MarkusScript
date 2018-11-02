@@ -5,7 +5,7 @@ import filecmp
 import smtplib
 
 
-# CHANGE IT NOW
+##############################CHANGE IT NOW##############################
 subject1 = "csc411-2018-09"
 subject2 = "csc418-2018-09"
 subject3 = "csc458-2018-09"
@@ -14,6 +14,8 @@ all_subjects = [subject1, subject2, subject3]
 sending_mail_account = 'account@mailbox.com'
 sending_mail_password = 'mailboxpassword'
 receive_mailbox_account = 'account@mailbox.com'
+##############################CHANGE IT NOW##############################
+
 
 # new Session()
 s = requests.Session()
