@@ -11,7 +11,7 @@ subject2 = "csc418-2018-09"
 subject3 = "csc458-2018-09"
 all_subjects = [subject1, subject2, subject3]
 # account and password of the mailbox that sends the email
-sending_mail_account = 'mail.'
+sending_mail_account = 'account@mailbox.com'
 sending_mail_password = 'mailboxpassword'
 sending_mail_server = "smtp.mailbox.com"
 sending_mail_port = 587
