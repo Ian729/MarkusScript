@@ -1,6 +1,9 @@
 # MarkusScript
 The goal is to automate markus lookup
 
+## The Final Result
+![Looks like this](./screenshot.png "Screenshot")
+
 ## Installation
 1. Download the script(download or clone)
 2. Change the subjects you want to lookup
