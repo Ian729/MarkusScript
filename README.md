@@ -8,4 +8,8 @@ The goal is to automate markus lookup
 
 ## Next step
 Done~~1. Add check points(compare online score with local version, if different, send a text message to user's phone)~~  
-2. Add automation(cron or other automation tool)
+Done~~2. Add automation(cron or other automation tool)~~  
+
+## Some thoughts:  
+I think the best way to automate this script is rent a server and have a cron task to automate it
+To learn more about cron, `man cron`
