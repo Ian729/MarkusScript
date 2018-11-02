@@ -10,14 +10,17 @@ subject1 = "csc411-2018-09"
 subject2 = "csc418-2018-09"
 subject3 = "csc458-2018-09"
 all_subjects = [subject1, subject2, subject3]
-
+# account and password of the mailbox that sends the email
+sending_mail_account = 'account@mailbox.com'
+sending_mail_password = 'mailboxpassword'
+receive_mailbox_account = 'account@mailbox.com'
 
 # new Session()
 s = requests.Session()
 # the mailbox to send the mail
 smtpObj = smtplib.SMTP("smtp.mailbox.com",587)
 smtpObj.starttls()
-smtpObj.login('yourqqaccount@mailbox.com', 'mailboxpassword')
+smtpObj.login(sending_mail_account, sending_mail_password)
 user_login = input("username:")
 user_password = input("password:")
 for subject in all_subjects:
@@ -63,5 +66,5 @@ for subject in all_subjects:
 			#replace the original file
 			os.rename(subject+"2.csv",subject+".csv")
 			# and send message, you can customize
-			smtpObj.sendmail("sendmailaccount@qq.com", "receive_mailbox_account@mailbox.com","Subject: Your Markus result is updated.Please check it soon!")
+			smtpObj.sendmail(sending_mail_account, receive_mailbox_account,"Subject: Your Markus result is updated.Please check it soon!")
 			
