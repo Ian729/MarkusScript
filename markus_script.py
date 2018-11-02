@@ -11,8 +11,10 @@ subject2 = "csc418-2018-09"
 subject3 = "csc458-2018-09"
 all_subjects = [subject1, subject2, subject3]
 # account and password of the mailbox that sends the email
-sending_mail_account = 'account@mailbox.com'
+sending_mail_account = 'mail.'
 sending_mail_password = 'mailboxpassword'
+sending_mail_server = "smtp.mailbox.com"
+sending_mail_port = 587
 receive_mailbox_account = 'account@mailbox.com'
 ##############################CHANGE IT NOW##############################
 
@@ -20,7 +22,7 @@ receive_mailbox_account = 'account@mailbox.com'
 # new Session()
 s = requests.Session()
 # the mailbox to send the mail
-smtpObj = smtplib.SMTP("smtp.mailbox.com",587)
+smtpObj = smtplib.SMTP(sending_mail_server,sending_mail_port)
 smtpObj.starttls()
 smtpObj.login(sending_mail_account, sending_mail_password)
 user_login = input("username:")
