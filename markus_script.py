@@ -1,5 +1,8 @@
 import requests
 import bs4, csv
+import os
+import filecmp
+
 # new Session()
 s = requests.Session()
 # constants
@@ -16,8 +19,13 @@ for subject in [subject1, subject2, subject3]:
 	page_soup = bs4.BeautifulSoup(response.text,'html.parser')
 	#find the table we want
 	table = page_soup.find('table')
+	
+	file_exist = os.path.isfile(subject+".csv") 
 	#open a csv file to write
-	f = open(subject+".csv","w")
+	if file_exist:
+		f = open(subject+"2.csv","w")
+	else:
+		f = open(subject+".csv","w")
 	#write header
 	f.write("NAME, RESULTS\n")
 	#find all rows
@@ -36,3 +44,12 @@ for subject in [subject1, subject2, subject3]:
 				print(result)
 			f.write(",".join((name, result)))
 	f.close()
+	if file_exist:
+		if filecmp.cmp(subject+".csv", subject+"2.csv"):
+			#no update recently
+			os.remove(subject+"2.csv")
+		else:
+			#replace the original file
+			os.rename(subject+"2.csv",subject+".csv")
+			# and send message
+			
