@@ -3,6 +3,7 @@ The goal is to automate markus lookup
 
 ## Installation
 1. Download the script(download or clone)
+2. Change the subjects you want to lookup
 2. Run the script from command line(python markus_script)
 3. input username and password
 

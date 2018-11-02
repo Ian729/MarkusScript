@@ -4,19 +4,23 @@ import os
 import filecmp
 import smtplib
 
+
+# CHANGE IT NOW
+subject1 = "csc411-2018-09"
+subject2 = "csc418-2018-09"
+subject3 = "csc458-2018-09"
+all_subjects = [subject1, subject2, subject3]
+
+
 # new Session()
 s = requests.Session()
 # the mailbox to send the mail
 smtpObj = smtplib.SMTP("smtp.mailbox.com",587)
 smtpObj.starttls()
 smtpObj.login('yourqqaccount@mailbox.com', 'mailboxpassword')
-# constants CHANGE IT NOW
-subject1 = "csc411-2018-09"
-subject2 = "csc418-2018-09"
-subject3 = "csc458-2018-09"
 user_login = input("username:")
 user_password = input("password:")
-for subject in [subject1, subject2, subject3]:
+for subject in all_subjects:
 	markus_url = 'https://markus.teach.cs.toronto.edu/'+subject+'/?locale=en'
 	#send post request
 	response = s.post(markus_url, data = {'user_login':user_login, 'user_password':user_password})
